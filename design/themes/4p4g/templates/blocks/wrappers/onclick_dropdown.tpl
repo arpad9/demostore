@@ -10,7 +10,7 @@
             {/if}
             {/hook}
         </div>
-        <div id="dropdown_{$dropdown_id}" class="cm-popup-box popup-content hidden">
+        <div id="dropdown_{$dropdown_id}" style="display: none;" class="cm-popup-box popup-content hidden">
             {$content|default:"&nbsp;" nofilter}
         </div>
     </div>

@@ -917,11 +917,12 @@ var Tygh = {
 
             $(_.doc).on('click', '.cm-popup-title', function(e) {
                 if (!$(this).hasClass('cm-popup-title-on')) {
-                    e.preventDefault();
                     $(this).addClass('cm-popup-title-on');
+                    $(this).siblings('.cm-popup-box').removeClass('hidden').hide();
                     $(this).parents('.dropdown-box').addClass('dropdown-box-on');
                 } else {
                     $(this).removeClass('cm-popup-title-on');
+                    $(this).siblings('.cm-popup-box').show();
                     $(this).parents('.dropdown-box').removeClass('dropdown-box-on');
                 }
             });
