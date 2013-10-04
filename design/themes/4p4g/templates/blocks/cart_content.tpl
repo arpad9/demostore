@@ -1,12 +1,12 @@
 {assign var="dropdown_id" value=$block.snapping_id}
 {assign var="r_url" value=$config.current_url|escape:url}
 {hook name="checkout:cart_content"}
-<div class="dropdown-box" id="cart_status_{$dropdown_id}">
+<div class="dropdown-box {if $smarty.session.cart.amount}filled{/if}" id="cart_status_{$dropdown_id}">
     <img class='cart-image' src="design/themes/4p4g/media/images/shopping_cart_icon.png">
     <a href="{"checkout.cart"|fn_url}" id="sw_dropdown_{$dropdown_id}" class="cm-popup-title cm-combination cm-combo-on">
         {hook name="checkout:dropdown_title"}
             {if $smarty.session.cart.amount}
-                <! --<i class="icon-basket filled"></i> -->
+                <!-- <i class="icon-basket filled"></i> -->
                 <span class="minicart-title hand">{$smarty.session.cart.amount}&nbsp;{__("items")} {__("for")}&nbsp;{include file="common/price.tpl" value=$smarty.session.cart.display_subtotal}<i class="icon-down-micro"></i></span>
             {else}
                 <!-- <i class="icon-basket empty"></i> -->
@@ -61,5 +61,6 @@
             </div>
         {/hook}
     </div>
-<!--cart_status_{$dropdown_id}--></div>
+  <!-- cart_status_{$dropdown_id} -->
+</div>
 {/hook}
