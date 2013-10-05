@@ -326,12 +326,30 @@ p.bottom-copyright {
 }
 
 li.flyout-parent {
-  max-height: 50px
-  /*position: relative;*/
+  max-height: 50px;
+  position: static !important;
+  display: table;
+  width: 150px;
+}
+li.flyout-parent > a {
+  display: table-cell;
+  width: 140px;
+  padding-right: 0;
+}
+li.flyout-parent:hover > a {
+  color: #E47911;
+  width: 140px;
+}
+li.flyout-parent i.icon-right-open {
+  top: 22px;
+  left: 140px;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
 }
 
 div.flyout-box {
-  background: url('muir_woods.jpg');
+  /*background: url('muir_woods.jpg');*/
   box-shadow: 0 30px 25px -20px #E5E5E5 inset, 3px 1px 4px rgba(0, 0, 0, 0.19);
   background-color: white;
   position: absolute;
@@ -339,8 +357,57 @@ div.flyout-box {
   left: 167px;
   top: -12px;
   /*height: 400px;*/
-  bottom: -413px;
+  bottom: -12px;
+  display: none;
+}
+div.flyout-box div.L2 {
+  position: relative;
+}
+div.flyout-box div.L2 a {
+  color: #E47911;
+  font-size: 18px;
+  margin-left: 10px;
+  position: relative;
+  width: 200px;
+}
+div.flyout-box > div.L2.dir + div.L2 > a {
+  border-top: 1px solid #EEEEEE;
+  margin-top: 10px;
+}
+
+div.flyout-box div.L3 div.L2 a {
+  color: #333333;
+  font-size: 13px;
+  line-height: 0;
+  position: relative;
+}
+div.flyout-box div.L3 div.L2.dir > a {
   display: none;
 }
 
+div.flyout-box div.L3 div.L2 a:hover {
+  color: #E47911;
+  text-decoration: underline;
+}
 
+li.flyout-parent.full-store-directory div.flyout-box {
+  width: 971px;
+}
+li.flyout-parent.full-store-directory div.flyout-box > div.L2.dir + div.L2 > a {
+  border-top: 0px solid #EEEEEE;
+  margin-top: 0px;
+}
+li.flyout-parent.full-store-directory div.flyout-box > div.L2.dir + div.L2 + div.L2 + div.L2 + div.L2 > a {
+  border-top: 1px solid #EEEEEE;
+  margin-top: 10px;
+}
+li.flyout-parent.full-store-directory div.flyout-box > div.L2.dir {
+  display: inline-block;
+  float: left;
+}
+li.flyout-parent.full-store-directory div.flyout-box div.L3 {
+  /*display: inline-block;*/
+}
+li.flyout-parent.full-store-directory div.flyout-box div.L3 a {
+  display: inline;
+}
