@@ -173,7 +173,16 @@ div.shop-by-department-dropdown .cm-popup-title,
 div.shop-by-department-dropdown .cm-popup-title:hover {
   margin-bottom: -4px;
   margin-top: 0;
+
+  background: black; /* Old browsers */
   background: -moz-linear-gradient(center top , #818181, #000000 35%) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%,#888888), color-stop(35%,#000000));
+  background: -webkit-linear-gradient(top, #888888 0%,#000000 35%);
+  background: -o-linear-gradient(top, #888888 0%,#000000 35%);
+  background: -ms-linear-gradient(top, #888888 0%,#000000 35%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#000000',GradientType=0 );
+  background: linear-gradient(top, #888888 0%,#000000 35%);
+
   box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.19);
   line-height: 12px;
 }
