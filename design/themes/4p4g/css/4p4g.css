@@ -324,3 +324,23 @@ p.bottom-copyright {
   margin: 0;
   color: #808080 !important;
 }
+
+li.flyout-parent {
+  max-height: 50px
+  /*position: relative;*/
+}
+
+div.flyout-box {
+  background: url('muir_woods.jpg');
+  box-shadow: 0 30px 25px -20px #E5E5E5 inset, 3px 1px 4px rgba(0, 0, 0, 0.19);
+  background-color: white;
+  position: absolute;
+  width: 500px;
+  left: 167px;
+  top: -12px;
+  /*height: 400px;*/
+  bottom: -413px;
+  display: none;
+}
+
+
