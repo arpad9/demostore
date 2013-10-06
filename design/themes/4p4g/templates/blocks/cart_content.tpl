@@ -6,10 +6,8 @@
     <a href="{"checkout.cart"|fn_url}" id="sw_dropdown_{$dropdown_id}" class="cm-popup-title cm-combination cm-combo-on">
         {hook name="checkout:dropdown_title"}
             {if $smarty.session.cart.amount}
-                <!-- <i class="icon-basket filled"></i> -->
                 <span class="minicart-title hand">{$smarty.session.cart.amount}&nbsp;{__("items")} {__("for")}&nbsp;{include file="common/price.tpl" value=$smarty.session.cart.display_subtotal}<i class="icon-down-micro"></i></span>
             {else}
-                <!-- <i class="icon-basket empty"></i> -->
                 <span class="minicart-title empty-cart hand">{__("cart_is_empty")}<i class="icon-down-micro"></i></span>
             {/if}        
         {/hook}

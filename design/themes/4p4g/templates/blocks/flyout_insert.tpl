@@ -5,7 +5,7 @@
 
 {hook name="blocks:flyout_element"}
 
-    {assign var="menu_name" value=preg_replace('/\s/','-',strtolower($item.$name))}
+    {assign var="menu_name" value=strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $item.$name), '-'))}
     <li class="{if $separated && !$smarty.foreach.$foreach_name.last}b-border {/if}{if $item.$childs}dir{/if}{if $item.active || $item|fn_check_is_active_menu_item:$block.type} cm-active{/if} flyout-parent {$menu_name}">
     
         {assign var="item_url" value=$item|fn_form_dropdown_object_link:$block.type}

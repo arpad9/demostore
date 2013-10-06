@@ -94,7 +94,7 @@ define('INSTALL_DB_EXECUTION', SECONDS_IN_HOUR); // 1 hour
 //define('MYSQL5', true);
 
 //Uncomment to enable the developer tools: debugger, PHP and SQL loggers, etc.
-// define('DEBUGGER', true);
+//define('DEBUGGER', true);
 
 // Theme description file name
 define('THEME_MANIFEST', 'manifest.ini');

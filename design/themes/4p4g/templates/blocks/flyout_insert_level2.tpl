@@ -5,7 +5,8 @@
 
 {hook name="blocks:flyout_element"}
 
-    <div class="L2 {if $separated && !$smarty.foreach.$foreach_name.last}b-border {/if}{if $item.$childs}dir{/if}{if $item.active || $item|fn_check_is_active_menu_item:$block.type} cm-active{/if}">
+    {assign var="menu_name" value=strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $item.$name), '-'))}
+    <div class="L2 {if $separated && !$smarty.foreach.$foreach_name.last}b-border {/if}{if $item.$childs}dir{/if}{if $item.active || $item|fn_check_is_active_menu_item:$block.type} cm-active{/if} {$menu_name}">
     
         {assign var="item_url" value=$item|fn_form_dropdown_object_link:$block.type}
         <a{if $item_url} href="{$item_url}"{/if} {if $item.new_window}target="_blank"{/if}>{$item.$name}</a>
