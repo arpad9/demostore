@@ -1,32 +1,48 @@
-{** block-description:bcarousel **}
+{** block-description:carousel **}
 
 {if $items}
-<div class="carousel slide" id="banner_slider_{$block.snapping_id}">
-    <ol class="carousel-indicators">
-      {foreach from=$items item="banner" key="key" name="banners"}
-          <li data-target="#banner_slider_{$block.snapping_id}" data-slide-to="{$smarty.foreach.banners.iteration}"></li>
-      {/foreach}
-    </ol>
-    <div class='carousel-inner'>
+<div class="cm-slider" id="banner_slider_{$block.snapping_id}">
+    <div class="cm-slider-window">
+        <div class="cm-slide-page-reel">
         {foreach from=$items item="banner" key="key"}
+            <div class="cm-slide-page">
             {if $banner.type == "G" && $banner.main_pair.image_id}
-                <div class="item">
-                  {include file="common/image.tpl" images=$banner.main_pair}
+                {if $banner.url != ""}<a href="{$banner.url|fn_url}" {if $banner.target == "B"}target="_blank"{/if}>{/if}
+                {include file="common/image.tpl" images=$banner.main_pair}
+                {if $banner.url != ""}</a>{/if}
+            {else}
+                <div class="wysiwyg-content">
+                    {$banner.description nofilter}
                 </div>
             {/if}
+            </div>
+        {/foreach}
+        </div>
+    </div>
+    <div class="cm-paging {if $block.properties.navigation == "D"}cm-paging-dots{/if}">
+        {foreach from=$items item="banner" key="key" name="banners"}
+        {if $block.properties.navigation == "P"}
+            <a data-ca-banner-iteration="{$smarty.foreach.banners.iteration}" href="#">{$smarty.foreach.banners.iteration}</a>
+        {else}
+            <a data-ca-banner-iteration="{$smarty.foreach.banners.iteration}" href="#"><i>&nbsp;</i></a>
+        {/if}
         {/foreach}
     </div>
-    <a class="carousel-control left" href="#banner_slider_{$block.snapping_id}" data-slide="prev"><i class="icon-left-open-thin"></i></a>
-    <a class="carousel-control right" href="#banner_slider_{$block.snapping_id}" data-slide="next"><i class="icon-right-open-thin"></i></a>
 </div>
 {/if}
 
 <script type="text/javascript">
 //<![CDATA[
-(function($) {
-  $('#banner_slider_{$block.snapping_id}').carousel({
-      interval: {math equation="s*1000" s=$block.properties.delay|default:0},
-  });
-})(jQuery);
+(function(_, $) {
+    $.ceEvent('on', 'ce.commoninit', function(context) {
+        var slider = context.find('#banner_slider_{$block.snapping_id}');
+        if (slider.length) {
+            slider.bannerSlider({
+                delay: {math equation="s*1000" s=$block.properties.delay|default:0},
+                navigation: {if $items|count > 1}'{$block.properties.navigation|default:'N'}'{else}'N'{/if}
+            });
+        }
+    });
+}(Tygh, Tygh.$));
 //]]>
 </script>
