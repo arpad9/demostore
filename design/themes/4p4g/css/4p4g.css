@@ -22,6 +22,42 @@ div.jcarousel-container ul, #product_quick_view {
   visibility: visible !important;
 }
 
+ol.carousel-indicators {
+  right: 50px;
+}
+
+a.carousel-control {
+  text-align: center !important;
+  top: 165px;
+  font-size: 50px;
+}
+a.carousel-control:active {
+  font-size: 50px;
+}
+a.carousel-control:focus {
+  opacity: .3;
+}
+a.carousel-control.left {
+  left: -12px;
+}
+a.carousel-control.right {
+  right: -12px;
+}
+a.carousel-control.left i.icon-left-open-thin {
+  position: relative;
+  top: -6px;
+  left: -4px;
+}
+a.carousel-control.right i.icon-right-open-thin {
+  position: relative;
+  top: -6px;
+  right: 0px;
+}
+
+div.carousel-inner .item img {
+  margin: auto;
+}
+
 div.products-row {
   margin-bottom: -60px;
 }
