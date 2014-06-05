@@ -1128,6 +1128,7 @@ function fn_get_plain_categories_tree($category_id = '0', $simple = true, $lang_
         'visible' => false,
         'plain' => true,
         'company_ids' => $company_ids,
+        'search_order'=>$simple,	//perception
     );
 
     /**
@@ -1272,6 +1273,28 @@ function fn_get_categories($params = array(), $lang_code = CART_LANGUAGE)
 
     $params = array_merge($default_params, $params);
 
+	
+	// perception
+	if ($params['search_order'] == 1) {
+			$sortings = array (
+				'timestamp' => '?:categories.timestamp',
+				'name' => '?:category_descriptions.category',
+				'position' => array(
+					'?:category_descriptions.category'
+				)
+			);
+	}else{
+		$sortings = array (
+			'timestamp' => '?:categories.timestamp',
+			'name' => '?:category_descriptions.category',
+			'position' => array(
+				'?:categories.position',
+				'?:category_descriptions.category'
+			)
+		);
+	}
+	
+    /*
     $sortings = array (
         'timestamp' => '?:categories.timestamp',
         'name' => '?:category_descriptions.category',
@@ -1280,6 +1303,7 @@ function fn_get_categories($params = array(), $lang_code = CART_LANGUAGE)
             '?:category_descriptions.category'
         )
     );
+    */
 
     $auth = & $_SESSION['auth'];
 

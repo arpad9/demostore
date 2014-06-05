@@ -4,9 +4,11 @@
 {math equation="ceil(n/c)" assign="rows" n=$subcategories|count c=$columns|default:"2"}
 {split data=$subcategories size=$rows assign="splitted_subcategories"}
 
+{*
 {if $category_data.description && $category_data.description != ""}
     <div class="compact wysiwyg-content margin-bottom">{$category_data.description nofilter}</div>
 {/if}
+*}
 
 <div class="clearfix">
     {if $subcategories}

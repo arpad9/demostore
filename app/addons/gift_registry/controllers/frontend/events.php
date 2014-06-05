@@ -20,7 +20,6 @@ $auth = & $_SESSION['auth'];
 
 if ($mode == 'add' && Registry::get('addons.gift_registry.event_creators') == 'registered' && empty($auth['user_id'])) {
     return array(CONTROLLER_STATUS_REDIRECT, "auth.login_form?return_url=" . urlencode(Registry::get('config.current_url')));
-
 }
 
 if (!empty($_REQUEST['access_key'])) {
