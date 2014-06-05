@@ -34,6 +34,7 @@ $schema = array(
     'my_account' => array (
         'templates' => array(
             'blocks/my_account.tpl' => array(),
+    		'blocks/my_account_menu.tpl' => array(),
         ),
         'wrappers' => 'blocks/wrappers',
         'content' => array (

@@ -165,7 +165,8 @@
             },
 
             submitForm: function(form, clicked_elm) {
-
+//alert(form);
+				$('.section-body').css("display","none");
                 if (activeQueries >= QUERIES_LIMIT) { // if we have queries in the queue, push request to it
                     queryStack.unshift(function() {
                         methods.submitForm(form, clicked_elm);

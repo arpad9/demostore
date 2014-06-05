@@ -3,7 +3,7 @@
     <i class="icon-flight"></i><a id="opener_shipping_estimation_block" class="cm-dialog-opener cm-dialog-auto-size shipping-edit-link" data-ca-target-id="shipping_estimation_block" href="{"checkout.cart"|fn_url}"><span>{if $cart.shipping}{__("change")}{else}{__("calculate")}{/if}</span></a>
     {/capture}
     <div class="hidden" id="shipping_estimation_block" title="{__("calculate_shipping_cost")}">
-        <div class="shipping-estimation">
+        <div class="shipping-estimation" style="visibility:visible;">
             {include file="views/checkout/components/shipping_estimation.tpl" location="popup" result_ids="shipping_estimation_link"}
         </div>
     </div>
@@ -25,6 +25,9 @@
         {/hook}
         
         {include file="views/checkout/components/checkout_totals_info.tpl"}
+        <div class="clear"></div>
+        <div>{__("temp_cart_text")}</div>
+        <div>&nbsp;</div>
         <div class="clear"></div>
         <ul class="statistic-list total">
                 <li class="total">

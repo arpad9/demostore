@@ -196,7 +196,8 @@ function fn_get_secure_controllers()
  */
 function fn_dispatch($controller = '', $mode = '', $action = '', $dispatch_extra = '', $area = AREA)
 {
-    Debugger::checkpoint('After init');
+    
+	Debugger::checkpoint('After init');
 
     fn_set_hook('before_dispatch');
 
@@ -304,7 +305,7 @@ function fn_dispatch($controller = '', $mode = '', $action = '', $dispatch_extra
             fn_redirect('http://' . Registry::get('config.http_host') . Registry::get('config.http_path') . '/' . Registry::get('config.current_url'));
         }
     }
-
+	
     LastView::instance()->prepare($_REQUEST);
 
     $controllers_cascade = array();
@@ -454,7 +455,6 @@ function fn_dispatch($controller = '', $mode = '', $action = '', $dispatch_extra
             fn_set_notification('N', __('notice'), __('text_changes_saved'), 'I', 'changes_saved');
         }
     }
-
     // Attach params and redirect if needed
     if (in_array($status, array(CONTROLLER_STATUS_OK, CONTROLLER_STATUS_REDIRECT)) && !empty($redirect_url)) {
         $params = array (
@@ -477,7 +477,7 @@ function fn_dispatch($controller = '', $mode = '', $action = '', $dispatch_extra
         if (!isset($external)) {
             $external = false;
         }
-
+		
         fn_redirect($redirect_url, false, $external);
     }
 

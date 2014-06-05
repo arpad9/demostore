@@ -1,6 +1,8 @@
 {include file="views/profiles/components/profiles_scripts.tpl"}
 
 {if $runtime.mode == "add" && $settings.General.quick_registration == "Y"}
+	{hook name="profiles:termsandprivacylink"}{/hook}
+
     <div class="account form-wrap">
     
         <form name="profiles_register_form" action="{""|fn_url}" method="post">

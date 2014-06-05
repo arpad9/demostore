@@ -315,7 +315,7 @@ div.homepage-left-col {
   margin-bottom: 15px;
 }
 div.homepage-left-col h3.sidebox-title span:before, div.shop-by-department-dropdown .cm-popup-title a:before {
-  content: "Shop By ";
+  content: "Shop by ";
   font-size: 12px;
   font-weight: normal;
   display: block;
@@ -457,3 +457,89 @@ li.flyout-parent.full-store-directory div.flyout-box div.L3 a {
 div.flyout-box div.L3 div.L2.dir > a {
   display: none;
 }
+
+/***************************** PS CSS Start *****************************/
+.about_faq_green{
+	
+}
+.about_faq_green .ad-container{
+	width: auto;
+	float: left;
+}
+.sponsored-ads .ad-container img{
+	border-radius: 5px !important;
+	border: 1px solid lightgray;
+	padding: 0px !important;
+}
+
+/******************* Wish List and Registry CSS *******************/
+
+.b{
+	border:1px solid red;
+}
+.registryContainer{
+	width : 700px;
+	margin : 0 auto;
+}
+.vSepretor{ height:125px; border-right:1px solid #CCC; width:1%;}
+.registryTitle, .registryTitle span{ text-align: center; font-size: 40px; color: #808080;}
+.registryBlockContainer{}
+.registryCreate{ width:30%;}
+.registryCreateTitle, .registryFindTitle, .registryCreateTitle span, .registryFindTitle span{ font-size:20px; color: #808080;}
+.darkColor{ color: #404040 !important; font-weight: bold;}
+.registryCreateDesc{ line-height: 20px; margin-top: 20px;}
+.registryFind{ width:67%;}
+.registryFindForm{}
+.registryGoButton{
+	background: #E1E1E1;
+    border: 1px solid #CCCCCC;
+    color: #737373;
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+
+/****/
+.registryRegistrationFormContainer{ width: 70%; margin: 0 auto;}
+.registrationPageTitle{ text-align: center; font-size: 40px; }
+.sectionHeading{ background-color: #F3F3F3; border-bottom: 1px solid #DEDEDE; padding: 5px 0px; font-weight: bold; font-size: 15px;}
+.sectionData{ margin-top: 10px;}
+.subSection{ width: 48%;}
+.subSectionHeading{ margin:5px 0px; font-weight: bold; color: #666666; font-size: 14px;}
+.regFormContainer .control-group { margin: 0 0 10px;}
+.regFormContainer .control-group label { font-size: 12px; margin-bottom: 0px;}
+
+.ml10{ margin-left:10px;}
+.mr10{ margin-right:10px;}
+/****/
+
+.weddingInfoContainer{}
+.registryInfoTitle{ font-size: 26px; color: #666666;}
+.registryInfoWelcome{ margin: 5px 0; }
+.registryInfoWelcome span{ background-color: #F5F5E6; }
+.registryInfoPrivacy{ margin: 5px 0;}
+.registryInfoManage{}
+.registryInfoManage a:link{ font-weight: bold;}
+
+/***** Featured category banner*/
+.reg-featured-category-banner-row{}
+.reg-featured-category-banner-row .mainbox2-body{ padding: 0px;}
+.reg-featured-category-banner-row .mainbox2-body .ad-container{ width: auto; max-width:180px; margin: 5px 0.8% 10px 0.8%; float: left;}
+/***** Featured category banner*/
+
+.user-container{
+	float: left;
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-right: 2%;
+	margin-top: 1%;
+	width: 225px;
+	height: 125px;
+	padding: 15px;
+}
+
+.birthday-name span{ color:#004B91; font-size:15px; font-weight: bold;}
+.birthday-icons { width:12%; opacity: 0.6;}
+.birthday-info { width:60%;}
+.birthday-buttons { width: 25%}
+/***************************** PS CSS END *****************************/

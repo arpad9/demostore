@@ -1,4 +1,7 @@
-{hook name="blocks:flyout_insert_level2"}{strip}
+{hook name="blocks:flyout_insert_level2"}
+
+{strip}
+
 {assign var="foreach_name" value="item_`$iid`"}
 
 {foreach from=$items item="item" name=$foreach_name}
@@ -26,4 +29,7 @@
 {/hook}
 
 {/foreach}
-{/strip}{/hook}
+
+{/strip}
+
+{/hook}
