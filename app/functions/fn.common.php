@@ -222,7 +222,8 @@ function fn_redirect($location, $no_delay = false, $allow_external_redirect = fa
 
     // Convert absolute link with location to relative one
     if (strpos($location, '://') !== false || substr($location, 0, 7) == 'mailto:') {
-        if (strpos($location, Registry::get('config.http_location')) !== false) {
+       
+	    if (strpos($location, Registry::get('config.http_location')) !== false) {
             $location = str_replace(array(Registry::get('config.http_location') . '/', Registry::get('config.http_location')), '', $location);
             $protocol = 'http';
 
@@ -283,7 +284,7 @@ function fn_redirect($location, $no_delay = false, $allow_external_redirect = fa
             $fragment = '#' . $parced_location['fragment'];
             $location = str_replace($fragment, '', $location);
         }
-
+		
         if ($protocol_changed && (Registry::get('config.http_host') != Registry::get('config.https_host') || Registry::get('config.http_path') != Registry::get('config.https_path'))) {
             $query_array[Session::getName()] = Session::getId();
         }
@@ -346,7 +347,8 @@ function fn_redirect($location, $no_delay = false, $allow_external_redirect = fa
         return fn_dispatch();
 
     } elseif (!ob_get_contents() && !headers_sent() && !defined('META_REDIRECT')) {
-        header('Location: ' . $location);
+	
+	    header('Location: '.$location);
         exit;
     } else {
         $delay = (Registry::get('runtime.comet') == true || $no_delay == true) ? 0 : 10;

@@ -20,7 +20,6 @@ use Tygh\Mailer;
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     //
     // Login mode
     //

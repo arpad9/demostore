@@ -5,6 +5,7 @@
 
 {hook name="blocks:sidebox_dropdown_element"}
 
+
     <li class="{if $separated && !$smarty.foreach.$foreach_name.last}b-border {/if}{if $item.$childs}dir{/if}{if $item.active || $item|fn_check_is_active_menu_item:$block.type} cm-active{/if}">
     
         {if $item.$childs}

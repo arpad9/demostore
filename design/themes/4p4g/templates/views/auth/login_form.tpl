@@ -1,5 +1,5 @@
 {assign var="id" value=$id|default:"main_login"}
-
+{hook name="profiles:termsandprivacylink"}{/hook}
 {capture name="login"}
 <form name="{$id}_form" action="{""|fn_url}" method="post">
 <input type="hidden" name="return_url" value="{$smarty.request.return_url|default:$config.current_url}" />

@@ -40,9 +40,11 @@ if (PHP_INT_SIZE == 4 && (substr(ini_get('memory_limit'), 0, -1) < "64")) {
  * Database connection options
  */
 $config['db_host'] = 'localhost';
-$config['db_name'] = '4profit4good';
+$config['db_name'] = 'cscart_4p4g';
+#$config['db_user'] = 'psuser';
 $config['db_user'] = '4profit4good';
 $config['db_password'] = '3Y_uez6uP';
+#$config['db_password'] = 'internet2014';
 
 $config['database_backend'] = 'mysqli';
 
@@ -51,7 +53,7 @@ $config['table_prefix'] = 'cscart_';
 
 /*
  * Script location options
- *
+ *	0363f0c9225b49cceaa70d39b0acd47d
  *	Example:
  *	Your url is http://www.yourcompany.com/store/cart
  *	$config['http_host'] = 'www.yourcompany.com';
@@ -67,9 +69,8 @@ $config['table_prefix'] = 'cscart_';
 $config['http_host'] = '4p4g.onehumanworld.com';
 $config['http_path'] = '';
 
-// Host and directory where software is installed on secure server
-$config['https_host'] = '4p4g.onehumanworld.com';
-$config['https_path'] = '';
+//$config['http_host'] = '115.112.143.170';
+//$config['http_path'] = '/ECO/csc/4profit4good';
 
 /*
  * Misc options
